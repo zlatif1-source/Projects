@@ -1,0 +1,26 @@
+"""
+File:    will_it_float.py
+Author:  Zain Latif
+Date:    9/16/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  will an object float.
+"""
+ 
+
+name = input("What object are we putting in the water today? ")
+weight = float(input("What is the weight of the object? "))
+volume = float(input("What is the volume of the object? :"))
+density_object = weight / volume
+density_of_water = 1000
+
+if density_object < density_water:
+    print(name, "will float.")
+elif density_object > density_water:
+    print(name, "will sink.")
+else:
+    print(name, "has neutral buoyancy.")
+           
+ 
+

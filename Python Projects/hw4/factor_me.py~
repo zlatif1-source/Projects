@@ -1,0 +1,40 @@
+"""
+File:    factor_me.py
+Author:  Zain Latif
+Date:    10/3/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  factors numbers 
+"""
+if __name__ == '__main__':
+    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    user_input = input("Enter a number to factor: ").strip()
+    num = int(user_input)
+    factors = []
+
+    for prime in primes:
+        while num % prime == 0:
+            factors.append(prime)
+            num = num // prime
+
+    if len(factors) > 0:
+        result = ""
+        for i in range(len(factors)):
+            result += str(factors[i])
+            if i < len(factors) - 1:
+                result += "*"
+    print(f"The factors are: {result}")
+else:
+    print("We didn't find any factors")
+
+if num > 1:
+    print(f"This part of the number couldn't be factored with primes less than 50: {num}")
+
+
+
+
+
+
+
+

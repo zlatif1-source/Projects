@@ -1,0 +1,23 @@
+"""
+File:    ascending.py
+Author:  Zain Latif
+Date:    11/6/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  if the list is ascending.py
+"""
+def ascending(current_list,start=0):
+    if start >= len(current_list) - 1:
+        return True
+    if current_list[start] > current_list[start + 1]:
+        return False
+    return ascending(current_list, start + 1)
+
+if __name__ == "__main__":
+    print(ascending([1, 2, 3, 4, 5, 6]))          
+    print(ascending([1, 2, 3, 4, 4, 4, 4, 5, 6])) 
+    print(ascending([1, 2, 3, 4, 4, 4, 4, 1, 1, 1, 5, 6])) 
+    print(ascending([1, 2, 4, 8, 16, 32, 64, 128]))  
+    print(ascending([10, 9, 8, 7, 6, 5, 4]))       
+    print(ascending([]))

@@ -1,0 +1,14 @@
+"""
+File:    Favorite_things.py
+Author:  Zain Latif
+Date:    9/9/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  output my favorite things
+"""
+
+print("My favorite food is Pizza.")
+print("My favorite movie is Red dawn.")
+print("My favorite music is none.")
+

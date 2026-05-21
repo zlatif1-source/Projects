@@ -1,0 +1,36 @@
+"""
+File:    rock_paper.py
+Author:  Zain Latif
+Date:    10/3/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  rock paper scissors
+"""
+import sys
+from random import choice, seed
+
+if len(sys.argv) >= 2:
+    seed(sys.argv[1])
+
+if __name__ == '__main__':
+    while True:
+        user_input = input("Enter rock, paper, or scissors to play, stop to end: ").lower().strip()
+        if user_input == "stop":
+            break
+        if user_input not in ["rock","paper","scissors"]:
+            print("You need to select rock, paper, or scissors.")
+            continue
+
+        the_choice = choice(["rock","paper","scissors"])
+        
+
+
+        if user_input == the_choice:
+            print(f"Both {user_input}, there is a tie.")
+        elif (user_input == "rock" and the_choice == "scissors") or \
+             (user_input == "paper" and the_choice == "rock")    or \
+             (user_input == "scissors" and the_choice == "paper"):
+            print(f"{user_input.capitalize()} beats {the_choice}, you win.")
+        else:
+            print(f"{the_choice.capitalize()} beats {user_input}, you lose.")

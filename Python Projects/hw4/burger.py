@@ -1,0 +1,58 @@
+"""
+File:    burger.py
+Author:  Zain Latif
+Date:    10/3/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  makes a burger
+"""
+if __name__ == '__main__':
+    print("pyith the condiments: ketchup,tomato,jalapenos,mushrooms,onions")
+    
+    has_bottom_bun = False
+    has_top_bun = False
+    condiments = []
+    burger_count = 0
+    cheese_count = 0
+
+
+
+
+    while not has_top_bun:
+        item = input("what do you want to add? ").lower().strip()
+
+        if not has_bottom_bun:
+            if item == "bottom bun":
+                has_bottom_bun = True
+            else:
+                print("You must start with the bottom bun!")
+
+        elif item == "burger":
+            burger_count += 1
+
+        elif item == "cheese":
+            cheese_count += 1
+
+        elif item in ["ketchup", "onion", "tomato", "jalapenos", "mushroosm"]:
+            condiments.append(item)
+
+        elif item == "top bun":
+            has_top_bun = True
+        else:
+            print("That item is not recognized.")
+
+
+    if burger_count == 1:
+        burger_type = "hamburger"
+    else:
+        burger_type = f"{burger_count}-cheeseburger"
+
+
+    if len(condiments) == 0:
+        condiments_descrip = "No Condiments"
+    else:
+        condiments_descrip = ', '.join(condiments)
+
+
+    print(f"You have created a  {burger_type} with the condiemnts: {condiments_descrip}")

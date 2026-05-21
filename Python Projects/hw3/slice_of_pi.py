@@ -1,0 +1,22 @@
+"""
+File:    slice_of_pi.py
+Author:  Zain Latif
+Date:    9/24/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  find pi
+"""
+L = int(input("Enter a positive integer: "))
+
+leib_sum = 0.0
+
+for n in range(L + 1):
+    term = ((-1) ** n) / (2 * n + 1)
+    leib_sum += term
+
+
+print(f"The sum up to L = {L} of the Leibniz formula is: {leib_sum}")
+
+pi_approx = 4 * leib_sum
+print(f"This gives our approximation of pi as {pi_approx}")

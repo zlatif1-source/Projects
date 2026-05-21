@@ -1,0 +1,28 @@
+"""
+File:    ab_verify.py
+Author:  Zain Latif
+Date:    11/6/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  verifies ab
+"""
+def ab_verify(s,count_a=0,count_b=0):
+    if not s:
+        return count_a >= count_b
+
+    if s[0] == "a":
+        count_a += 1
+    elif s[0] == "b":
+        count_b += 1
+
+    if count_b > count_a:
+        return False
+
+    return ab_verify(s[1:], count_a, count_b)
+
+if __name__ = "__main__":
+    s = input('Enter a string to test: ')
+while s != 'quit':
+    print(ab_verify(s, 0, 0))
+    s = input('Enter a string to test: ')

@@ -1,0 +1,55 @@
+"""
+File:    fast_food.py
+Author:  Zain Latif
+Date:    10/15/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  does fast food stuff
+"""
+
+# Constants for item prices
+BURGER_PRICE = 5.00
+FRIES_PRICE = 3.00
+DRINK_PRICE = 2.50
+COMBO_PRICE = 8.50
+ANYTHING_ELSE_PRICE = 4.00
+
+
+PLACE_ORDER = 'place order'
+
+
+def fast_food_receipt():
+    """
+    Calculate the total cost of the fast food order.
+    A combo consists of a burger/sandwich, fries, and a drink.
+    """
+    total = 0  
+    items = []  
+
+    
+    order = input("What would you like to order? ")
+    while order.lower() != PLACE_ORDER:
+        items.append(order.lower())  
+        order = input("What would you like to order? ")
+
+    
+    for item in items:
+        if "burger" in item or "sandwich" in item:
+            total += BURGER_PRICE
+        elif "fries" in item:
+            total += FRIES_PRICE
+        elif item in ["coke", "sprite", "mountain dew"]:
+            total += DRINK_PRICE
+        else:
+            total += ANYTHING_ELSE_PRICE  
+
+    return total 
+
+
+if __name__ == "__main__":
+    total_cost = fast_food_receipt()
+    print(f"The total bill is {total_cost}")
+
+
+        

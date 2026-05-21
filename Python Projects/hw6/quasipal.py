@@ -1,0 +1,36 @@
+"""
+File:    quasipal.py
+Author:  Zain Latif
+Date:    11/6/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  finds if its a palindrome
+"""
+def quasi_palindrome(word, errors):
+    if errors < 0:
+        return False
+    
+    if len(word) < 2:
+        return True
+    
+    if word[0] == word[-1]:
+        return quasi_palindrome(word[1:-1],errors)
+    else:
+        return quasi_palindrome(word[1:-1],errors - 1)
+
+if __name__ == "__main__":
+    quit_program = False
+    while not quit_program:
+        word = input("What word do you want to check? ")
+        if word.lower() == "quit":
+            quit_program = True
+        else:
+            errors = int(input("How many errors do you want to allow? "))
+            if quasi_palindrome(word, errors):
+                print(f"It was a {errors}-quasi palindrome")
+            else:
+                print(f"It was not a {errors}-quasi palindrome")
+
+
+            

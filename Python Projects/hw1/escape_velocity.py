@@ -1,0 +1,34 @@
+"""
+File:    escape_velocity.py
+Author:  Zain Latif
+Date:    9/10/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  calculates the velocity required to escape the gravitational pull of an object
+"""
+body=input("What body are we launching from? ")
+
+mass_c=float(input("Enter the mass of the planet in scientific notation with the floating number first: "))
+
+mass_p=int(input("What power of 10 is this? "))
+
+mass_of_planet = mass_c * (10 ** mass_p)
+
+radius_c = float(input("Enter the coefficient of the scientific notation of the radius from the center of " + body + ": "))
+
+radius_p = int(input("what power of 10 is this? "))
+
+radius_of_planet = radius_c * (10 ** radius_p)
+
+G = 6.67 * 10 ** -11
+
+numerator = 2 * G * mass_of_planet
+denominator = radius_of_planet
+velocity_squared = numerator / denominator
+escape_velocity = velocity_squared ** 0.5
+
+print("The escape velocity required for", body, "is",round(escape_velocity, 3), "m/s")
+
+
+ 

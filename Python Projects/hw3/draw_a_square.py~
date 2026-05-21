@@ -1,0 +1,18 @@
+"""
+File:    draw_a_square.py
+Author:  Zain Latif
+Date:    9/24/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  drawing a square
+"""
+size = int(input("What is the size of the square? "))
+
+
+for y in range(size):
+
+    for x in range(size):
+
+        print("*", end=" ")
+    print()

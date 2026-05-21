@@ -1,0 +1,23 @@
+"""
+File:    which_month2.py
+Author:  Zain Latif
+Date:    9/24/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  which month it will be in the future
+
+"""
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+
+starting_month = int(input("What month are we starting in (enter as an int)? "))
+
+
+if 1 <= starting_month <= 12:
+    future_months = int(input("How many months in the future should we go? "))
+
+    future_month_i = (starting_month - 1 + future_months) % 12
+
+    print(f"The month will be {months[future_month_index]}")
+else:
+    print("That is not a month between 1 and 12.")

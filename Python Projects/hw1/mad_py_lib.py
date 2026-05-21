@@ -1,0 +1,16 @@
+"""
+File:    mad_py_lib.py
+Author:  Zain Latif
+Date:    9/10/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  a program that makes a mad-lib (phrasal template word game) 
+"""
+name=input("Tell me your name: ")
+subject_thing=input("Tell me a subject/thing: ")
+adjective=input("Tell me an adjective: ")
+verb=input("Tell me a verb: ")
+noun=input("Tell me a noun: ")
+
+print("hello",name + ","," we are going to have an amazing semester learning",subject_thing + ","," it's going to be fun so don't worry if you need to",verb,"from a",noun + ".")

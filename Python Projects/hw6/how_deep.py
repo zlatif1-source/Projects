@@ -1,0 +1,45 @@
+"""
+File:    how_deep.py
+Author:  Zain Latif
+Date:    11/6/2024
+Section: 44
+E-mail:  zlatif1@umbc.edu
+Description:
+  how deep is the list
+"""
+import random
+
+
+def make_list_structure(max_depth, p=.8):
+   if max_depth and random.random() < p:
+       new_list = []
+       for i in range(5):
+           sub_list = make_list_structure(max_depth - 1, p * .9)
+           if sub_list is not None:
+               new_list.append(sub_list)
+       return new_list
+
+   return None
+
+def how_deep(list_struct):
+    if list_struct == []:
+        return 1
+    max_depth = 0
+    for item in list_struct:
+        if item == [] or isinstance(item, list):
+            depth = how_deep(item)
+            if depth > max_depth:
+               max_depth = depth
+
+    return max_depth + 1
+        
+
+
+if __name__ == '__main__':
+   print(how_deep([[[], [], [], [[[]]]], []]))
+   print(how_deep([]))
+   print(how_deep([[], []]))
+   print(how_deep([[[]], [], [[]], [[[]]]]))
+   print(how_deep([[[[], [[]], [[[]]], [[[[]]]]]]]))
+   print(how_deep([[[], []], [], [[], []]]))
+
