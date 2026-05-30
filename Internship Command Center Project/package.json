@@ -1,0 +1,17 @@
+{
+  "name": "internship-command-center",
+  "version": "1.0.0",
+  "description": "A full-stack internship application tracker with analytics, filtering, notes, and persistent storage.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "full-stack",
+    "internships",
+    "resume-project",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT"
+}

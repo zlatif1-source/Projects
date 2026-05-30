@@ -1,0 +1,41 @@
+[
+  {
+    "id": "4ad39666-fe80-4256-b862-0c236d447b22",
+    "company": "Northstar Labs",
+    "role": "Software Engineering Intern",
+    "status": "Interview",
+    "location": "Remote",
+    "deadline": "2026-06-12",
+    "appliedDate": "2026-05-20",
+    "link": "https://example.com/northstar",
+    "notes": "Prep backend design stories and review API project.",
+    "priority": "High",
+    "updatedAt": "2026-05-28T17:22:54.990Z"
+  },
+  {
+    "id": "af55c5fe-48c9-46a4-929a-3cd206f27d84",
+    "company": "Atlas Health",
+    "role": "Frontend Intern",
+    "status": "Applied",
+    "location": "New York, NY",
+    "deadline": "2026-06-03",
+    "appliedDate": "2026-05-22",
+    "link": "https://example.com/atlas",
+    "notes": "Follow up after one week if no response.",
+    "priority": "Medium",
+    "updatedAt": "2026-05-28T17:22:54.990Z"
+  },
+  {
+    "id": "cc708bab-aa65-41ef-ba0f-63fd152ab421",
+    "company": "Cedar Cloud",
+    "role": "Platform Engineering Intern",
+    "status": "Wishlist",
+    "location": "Seattle, WA",
+    "deadline": "2026-06-18",
+    "appliedDate": "",
+    "link": "https://example.com/cedar",
+    "notes": "Tailor resume toward systems and tooling.",
+    "priority": "High",
+    "updatedAt": "2026-05-28T17:22:54.990Z"
+  }
+]

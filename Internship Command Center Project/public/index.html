@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Command Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Internship Command Center</p>
+          <h1>Track every application from wishlist to offer.</h1>
+        </div>
+        <button class="primary-button" id="newApplicationButton">+ New application</button>
+      </section>
+
+      <section class="metrics" aria-label="Application metrics">
+        <article>
+          <span id="totalApplications">0</span>
+          <p>Total</p>
+        </article>
+        <article>
+          <span id="activeApplications">0</span>
+          <p>Active</p>
+        </article>
+        <article>
+          <span id="interviews">0</span>
+          <p>Interviews</p>
+        </article>
+        <article>
+          <span id="urgentDeadlines">0</span>
+          <p>Due soon</p>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel form-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Application</p>
+            <h2 id="formTitle">Add role</h2>
+          </div>
+
+          <form id="applicationForm">
+            <input type="hidden" id="applicationId" />
+
+            <label>
+              Company
+              <input id="company" name="company" type="text" placeholder="Company name" required />
+            </label>
+
+            <label>
+              Role
+              <input id="role" name="role" type="text" placeholder="Software Engineering Intern" required />
+            </label>
+
+            <div class="field-row">
+              <label>
+                Status
+                <select id="status" name="status">
+                  <option>Wishlist</option>
+                  <option>Applied</option>
+                  <option>Interview</option>
+                  <option>Offer</option>
+                  <option>Rejected</option>
+                </select>
+              </label>
+
+              <label>
+                Priority
+                <select id="priority" name="priority">
+                  <option>Low</option>
+                  <option selected>Medium</option>
+                  <option>High</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Location
+              <input id="location" name="location" type="text" placeholder="Remote, New York, NY..." />
+            </label>
+
+            <div class="field-row">
+              <label>
+                Deadline
+                <input id="deadline" name="deadline" type="date" />
+              </label>
+
+              <label>
+                Applied
+                <input id="appliedDate" name="appliedDate" type="date" />
+              </label>
+            </div>
+
+            <label>
+              Link
+              <input id="link" name="link" type="url" placeholder="https://..." />
+            </label>
+
+            <label>
+              Notes
+              <textarea id="notes" name="notes" rows="4" placeholder="Interview prep, referral notes, follow-up reminders..."></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button class="primary-button" type="submit">Save</button>
+              <button class="ghost-button" type="button" id="resetButton">Clear</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="list-area">
+          <div class="toolbar">
+            <label class="search-field">
+              Search
+              <input id="searchInput" type="search" placeholder="Company, role, location..." />
+            </label>
+
+            <label>
+              Status
+              <select id="statusFilter">
+                <option>All</option>
+                <option>Wishlist</option>
+                <option>Applied</option>
+                <option>Interview</option>
+                <option>Offer</option>
+                <option>Rejected</option>
+              </select>
+            </label>
+
+            <label>
+              Priority
+              <select id="priorityFilter">
+                <option>All</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="status-strip" id="statusStrip"></div>
+          <div class="application-list" id="applicationList"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="applicationCardTemplate">
+      <article class="application-card">
+        <div class="card-topline">
+          <span class="status-pill"></span>
+          <span class="priority-pill"></span>
+        </div>
+        <div class="card-main">
+          <div>
+            <h3></h3>
+            <p class="role-line"></p>
+          </div>
+          <div class="card-actions">
+            <button class="icon-button edit-button" title="Edit">Edit</button>
+            <button class="icon-button delete-button" title="Delete">Delete</button>
+          </div>
+        </div>
+        <dl class="details">
+          <div>
+            <dt>Location</dt>
+            <dd class="location"></dd>
+          </div>
+          <div>
+            <dt>Deadline</dt>
+            <dd class="deadline"></dd>
+          </div>
+          <div>
+            <dt>Applied</dt>
+            <dd class="applied"></dd>
+          </div>
+        </dl>
+        <p class="notes"></p>
+        <a class="role-link" target="_blank" rel="noreferrer">Open posting</a>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
